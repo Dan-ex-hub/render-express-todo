@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit To-Do Item</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        function validateEditForm() {
+            var input = document.forms["editForm"]["updatedItem"].value.trim();
+            if (input === "") {
+                alert("Please enter a to-do item!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body class="edit-body">
+    <header class="box edit-header" id="heading">
+        <h1>Edit To-Do</h1>
+    </header>
+
+    <main class="edit-main">
+        <div class="box edit-form-container">
+            <form id="editForm" action="/edit" method="POST" onsubmit="return validateEditForm()" class="edit-form">
+                <input type="hidden" name="itemIndex" value="<%= itemIndex %>">
+                <input type="text" name="updatedItem" value="<%= currentItem.name %>" autofocus autocomplete="off" class="edit-input">
+                <select name="updatedPriority" class="priority-select edit-select">
+                    <option value="high" <%= currentItem.priority === 'high' ? 'selected' : '' %>>High</option>
+                    <option value="medium" <%= currentItem.priority === 'medium' ? 'selected' : '' %>>Medium</option>
+                    <option value="low" <%= currentItem.priority === 'low' ? 'selected' : '' %>>Low</option>
+                </select>
+                <button class="edit edit-btn" type="submit">Save Changes</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="box edit-footer" style="margin-top:0;">
+        <p>Copyright &copy; 2025 Daniel</p>
+    </footer>
+</body>
+</html>

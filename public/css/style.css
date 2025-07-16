@@ -1,0 +1,220 @@
+.fullpage-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.fullpage-main {
+    flex: 1;
+}
+.fullpage-footer {
+    margin-top: 0;
+    width: 100%;
+    background: #a683e3;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+html{
+    background-color:  #e4e9fd;
+    
+    font-family: 'helvetica neue';
+}
+h1{
+    color:#555;
+    padding:10px;
+}
+.box{
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+#heading{
+    background-color: #a683e3;
+    text-align: center;
+}
+.date-center {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.1em;
+    color: #555;
+}
+.fullpage-footer {
+    margin-top: 0;
+    width: 100%;
+    background: #a683e3;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.todo-center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.item {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1px solid #f1f1f1;
+    width: 100%;
+}
+.item{
+    min-height: 70px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1px solid #f1f1f1;
+}
+.item:last-child{
+    border-bottom: 0;
+}
+
+input:checked+p{
+    text-decoration:line-through;
+    text-decoration-color: #555;
+}
+
+/* input[type="checkbox"]{ }*/
+
+p{
+    margin:0;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 200;
+    width:200px;
+    text-align: center;
+    color: #00204a;
+    
+}
+form{
+    text-align:center;
+    margin-left: 2px;
+}
+ button.submit{
+    min-height:50px;
+    width: 50px;
+    padding:2%;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: #a683e3;
+    color:#fff;
+    font-size:30px;
+    padding-bottom: 6px;
+}
+
+input[type="text"] {
+    text-align: center;
+    height: 60px;
+    top:10px;
+    border:none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 200;
+    width:313px;
+}
+
+input[type="text"]:focus {
+    outline:none;
+    box-shadow: inset 0 -3px 0 0 #a683e3;
+}
+::placeholder{
+    color:grey;
+    opacity:1;
+}
+footer{
+    color:white;
+    color:rgba(0,0,0,0.5);
+    text-align: center;
+    margin-top:25%;
+
+}
+
+
+button.edit{
+    color:white;
+    background-color: rgb(117, 117, 218);
+    padding:0.5rem;
+    border:transparent;
+    border-radius:5px;
+}
+button.delete{
+    color:white;
+    background-color: red;
+    padding:0.5rem;
+    border:transparent;
+    border-radius:5px;
+}
+button:hover{
+    opacity:0.3;
+}
+.priority-section {
+    padding: 10px 0;
+}
+
+.priority-heading {
+    text-align: center;
+    color: white; 
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-radius: 5px 5px 0 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.high-priority .priority-heading {
+    background-color: #e74c3c; 
+}
+
+.mid-priority .priority-heading {
+    background-color: #f39c12;
+}
+
+.low-priority .priority-heading {
+    background-color: #2ecc71; 
+}
+
+.priority-select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 10px; 
+    background-color: #f9f9f9;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.priority-select:focus {
+    outline: none;
+    border-color: #a683e3;
+    box-shadow: 0 0 0 2px rgba(166, 131, 227, 0.5);
+}
+
+.edit-footer {
+    margin-top: 2rem;
+}
+.edit-body, .edit-main {
+    /* Remove all flex and min-height, revert to normal block layout */
+    min-height: unset !important;
+    display: block !important;
+    flex-direction: unset !important;
+    align-items: unset !important;
+    justify-content: unset !important;
+}
