@@ -35,9 +35,6 @@
                 <option value="low" <%= filter === 'low' ? 'selected' : '' %>>Low</option>
             </select>
         </form>
-    </div>
-
-    <div class="box todo-center">
         <form class="item" id="todoForm" action="/" method="POST" onsubmit="return validateForm()">
             <input type="text" name="ele1" placeholder="New To-Do" required autocomplete="off">
             <select name="priority" class="priority-select">
