@@ -1,22 +1,48 @@
 .fullpage-body {
     min-height: 100vh;
+    margin-top: 0;
     display: flex;
     flex-direction: column;
 }
-.fullpage-main {
+
+.center-container {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.fullpage-footer {
-    margin-top: 0;
+
+.joint-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.joint-header-todo {
     width: 100%;
-    background: #a683e3;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    bottom: 0;
-    left: 0;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    background: white;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
 }
+
+#heading {
+    width: 100%;
+    text-align: center;
+    background-color: #a683e3;
+    color: white;
+    padding: 1px;
+    margin-bottom: 0;
+}
+
 html{
     background-color:  #e4e9fd;
     
@@ -34,53 +60,47 @@ h1{
     border-radius: 5px;
     box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
-#heading{
-    background-color: #a683e3;
-    text-align: center;
-}
 .date-center {
     display: block;
     text-align: center;
-    margin: 0 auto;
+    margin-bottom:10px;
     font-size: 1.1em;
     color: #555;
 }
-.fullpage-footer {
-    margin-top: 0;
+
+    .fullpage-footer {
     width: 100%;
     background: #a683e3;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-    position: relative;
-    bottom: 0;
-    left: 0;
+    margin-top: 0;
+    /* No flex or position needed, flexbox will push it to bottom */
+}
+  
+.fullpage-main {
+    flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
 }
+
 .todo-center {
     width: 100%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 0;
 }
 .item {
-    min-height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 1px solid #f1f1f1;
+
     width: 100%;
-}
-.item{
-    min-height: 70px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1px solid #f1f1f1;
 }
 .item:last-child{
     border-bottom: 0;
@@ -98,7 +118,6 @@ p{
     padding: 20px;
     font-size: 20px;
     font-weight: 200;
-    width:200px;
     text-align: center;
     color: #00204a;
     
@@ -108,14 +127,15 @@ form{
     margin-left: 2px;
 }
  button.submit{
-    min-height:50px;
-    width: 50px;
+    min-height:35px;
+    margin-right: 2px;
+    width:45px;
     padding:2%;
     border-radius: 50%;
     border-color: transparent;
     background-color: #a683e3;
     color:#fff;
-    font-size:30px;
+    font-size:20px;
     padding-bottom: 6px;
 }
 
@@ -129,7 +149,6 @@ input[type="text"] {
     font-weight: 200;
     width:313px;
 }
-
 input[type="text"]:focus {
     outline:none;
     box-shadow: inset 0 -3px 0 0 #a683e3;
@@ -142,17 +161,17 @@ footer{
     color:white;
     color:rgba(0,0,0,0.5);
     text-align: center;
-    margin-top:25%;
+    margin-top:140px;
 
 }
-
-
 button.edit{
     color:white;
     background-color: rgb(117, 117, 218);
     padding:0.5rem;
     border:transparent;
     border-radius:5px;
+    margin-right:5px;
+    margin-bottom: 5px;
 }
 button.delete{
     color:white;
@@ -160,42 +179,19 @@ button.delete{
     padding:0.5rem;
     border:transparent;
     border-radius:5px;
+    margin-right:5px;
+    margin-bottom: 5px;
 }
 button:hover{
     opacity:0.3;
 }
-.priority-section {
-    padding: 10px 0;
-}
-
-.priority-heading {
-    text-align: center;
-    color: white; 
-    padding: 10px;
-    margin-top: 0;
-    margin-bottom: 15px;
-    border-radius: 5px 5px 0 0;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.high-priority .priority-heading {
-    background-color: #e74c3c; 
-}
-
-.mid-priority .priority-heading {
-    background-color: #f39c12;
-}
-
-.low-priority .priority-heading {
-    background-color: #2ecc71; 
-}
 
 .priority-select {
-    padding: 8px;
+    padding: 4px;
+    margin-top: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-left: 10px; 
+    margin-right: 10px;
     background-color: #f9f9f9;
     font-size: 16px;
     cursor: pointer;
@@ -207,14 +203,64 @@ button:hover{
     box-shadow: 0 0 0 2px rgba(166, 131, 227, 0.5);
 }
 
-.edit-footer {
-    margin-top: 2rem;
+.edit-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-.edit-body, .edit-main {
-    /* Remove all flex and min-height, revert to normal block layout */
-    min-height: unset !important;
-    display: block !important;
-    flex-direction: unset !important;
-    align-items: unset !important;
-    justify-content: unset !important;
+
+.edit-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#filterForm label{
+    margin-left:100px;
+}
+
+
+
+.fullpage-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.center-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* vertical center */
+}
+
+#heading {
+    width: 100%;
+    text-align: center;
+    background-color: #a683e3;
+    color: white;
+    padding: 1px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.fullpage-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-center {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
 }
